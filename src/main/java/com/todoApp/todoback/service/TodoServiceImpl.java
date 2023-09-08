@@ -41,6 +41,7 @@ public class TodoServiceImpl implements TodoService{
         if(todoDetails.getIsDone() != null) {
             todo.setIsDone(todoDetails.getIsDone());
         }
+        todo.setLastModified(todoDetails.getLastModified());
 
         return todoRepository.save(todo);
     }

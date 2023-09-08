@@ -2,6 +2,8 @@ package com.todoApp.todoback.model;
 
 import jakarta.persistence.*;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "todos")
 public class Todo {
@@ -15,6 +17,9 @@ public class Todo {
 
     @Column(name = "is_done")
     private Boolean isDone;
+
+    @Column(name = "last_modified")
+    private Date lastModified;
 
     public Todo(){}
 
@@ -39,6 +44,8 @@ public class Todo {
         this.todoName = todoName;
     }
 
+    public Date getLastModified(){return lastModified;}
+    public void setLastModified(Date lastModified){this.lastModified = lastModified;}
     public Boolean getIsDone(){
         return isDone;
     }
